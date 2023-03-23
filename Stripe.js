@@ -32,3 +32,19 @@ const token = jwt.sign(
       );
 
 //Login Flow....................
+
+//Send the token with the whole subscription details
+const token = jwt.sign(
+        {
+          id: user.id,
+          firstname: user.firstname,
+          lastname: user.lastname,
+          email: user.email,
+          picture: user.picture,
+          customer_stripe_id: user.customer_stripe_id,
+          isSucbscription: user.isSucbscription,
+          current_period_start: user.current_period_start,
+          current_period_end: user.current_period_end,
+        },
+        process.env.jwtPrivateKey
+      );
