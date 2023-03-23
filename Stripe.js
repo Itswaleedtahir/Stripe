@@ -16,3 +16,15 @@ let updatedUser = await SignUp.update(
           returning: true,
         }
       );
+
+//Then return the updated token
+const token = jwt.sign(
+        {
+          id: user.id,
+          firstname: user.firstname,
+          lastname: user.lastname,
+          email: user.email,
+          customer_stripe_id: user.customer_stripe_id,
+        },
+        process.env.jwtPrivateKey
+      );
