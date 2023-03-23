@@ -1,3 +1,5 @@
+///// Sign Up flow.................................
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 //Then create a stripe customer
@@ -28,3 +30,5 @@ const token = jwt.sign(
         },
         process.env.jwtPrivateKey
       );
+
+//Login Flow....................
